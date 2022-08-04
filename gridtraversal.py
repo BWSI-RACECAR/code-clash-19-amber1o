@@ -27,8 +27,9 @@ Input: m=3; n=7; Output = 28
 class Solution:
     def uniquePaths(self,m, n):
         grid = [[1 for _ in range(n)] for _ in range(m)]
-        for i in range(1,m):
-            grid[i][j] = grid[i-1][j] + grid[i][j-1]
+        for i in range(1, m):
+            for j in range(1, n):
+                grid[i][j] = grid[i-1][j] + grid[i][j-1]
 
 def main():
     num1 = int(input())
